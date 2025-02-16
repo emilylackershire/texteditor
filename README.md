@@ -14,16 +14,18 @@
 ## Analysis of SimpleStringBuffer
 
 Relevant inputs: 
-
+- character given to add to the string buffer
 
 Critical operations: 
-
+- inserting the character 
+- increasing cursor position 
+- increasing size
 
 Mathematical model for insert runtime:
-
+Y = n
 
 Big-O:
-insert is O()
+insert is O(1)
 
 ## Changelog
 
