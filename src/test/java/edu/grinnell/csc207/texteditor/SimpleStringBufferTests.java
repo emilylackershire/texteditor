@@ -3,6 +3,10 @@ package edu.grinnell.csc207.texteditor;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
+import net.jqwik.api.ForAll;
+import net.jqwik.api.Property;
+import net.jqwik.api.constraints.IntRange;
+
 public class SimpleStringBufferTests {
     /**
      * test one for insert
@@ -174,5 +178,13 @@ public class SimpleStringBufferTests {
         assertEquals('!', stringbuffer.getChar(2));
     }
 
-
+    @Property
+    public boolean examplePropertyTest(@ForAll @IntRange(min = 1, max = 1000) int sz, char ch) {
+        SimpleStringBuffer stringbuffer = new SimpleStringBuffer();
+        for (int i = 0; i < sz; i++) {
+            stringbuffer.insert('h');
+        }
+        return stringbuffer.getChar(stringbuffer.size) == ch;
+    }
 }
+
