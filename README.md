@@ -8,6 +8,8 @@
 + Visual Studio Code
 + Instructions provided from Professor Osera of Grinnell College, accessed through his website: 
   https://osera.cs.grinnell.edu/ttap/data-structures-labs/text-editor.html
++ Used the oracle Java docs to find functions that may be helpful to write the ones in the simple string buffer, accesed online:  
+   https://docs.oracle.com/javase/8/docs/api///?java/util/function/Function.html
 
 ## Changelog
 
