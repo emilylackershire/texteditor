@@ -11,6 +11,20 @@
 + Used the oracle Java docs to find functions that may be helpful to write the ones in the simple string buffer, accesed online:  
    https://docs.oracle.com/javase/8/docs/api///?java/util/function/Function.html
 
+## Analysis of SimpleStringBuffer
+
+Relevant inputs: 
+
+
+Critical operations: 
+
+
+Mathematical model for insert runtime:
+
+
+Big-O:
+insert is O()
+
 ## Changelog
 
 _(TODO: fill me in with a log of your committed changes)_
