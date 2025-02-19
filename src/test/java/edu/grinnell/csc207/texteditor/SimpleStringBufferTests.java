@@ -28,7 +28,7 @@ public class SimpleStringBufferTests {
         stringbuffer.insert('h');
         stringbuffer.insert('i');
         String testString = stringbuffer.toString();
-        assertEquals("i", testString);
+        assertEquals("hi", testString);
     }
 
      /**
@@ -179,12 +179,13 @@ public class SimpleStringBufferTests {
     }
 
     @Property
-    public boolean examplePropertyTest(@ForAll @IntRange(min = 1, max = 1000) int sz, char ch) {
+    public boolean examplePropertyTest(@ForAll @IntRange(min = 1, max = 10) int sz) {
+        char ch = 'e';
         SimpleStringBuffer stringbuffer = new SimpleStringBuffer();
         for (int i = 0; i < sz; i++) {
-            stringbuffer.insert('h');
+            stringbuffer.insert(ch);
         }
-        return stringbuffer.getChar(stringbuffer.size) == ch;
+        return stringbuffer.getChar(sz - 1) == ch;
     }
 }
 
