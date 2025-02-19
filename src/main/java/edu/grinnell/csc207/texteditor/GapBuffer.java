@@ -7,10 +7,12 @@ import java.util.Arrays;
  */
 public class GapBuffer {
 
-    int cursor = 0;
-    int size = 0;
-    int arrLength = 10000;
-    char gapBuffer[] = new char[arrLength];
+    private int arrLength = 10000;
+    private char gapBuffer[] = new char[arrLength];
+    private int gapStart;
+    private int gapEnd;
+    private int cursor = 0;
+    private int size = 0;
 
     public void insert(char ch) {
         throw new UnsupportedOperationException("Unimplemented method 'delete'");
