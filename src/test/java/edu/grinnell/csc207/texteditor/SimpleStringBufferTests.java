@@ -186,5 +186,36 @@ public class SimpleStringBufferTests {
         }
         return stringbuffer.getChar(sz - 1) == ch;
     }
+    
+    @Test
+    public void deleteZero() {
+        GapBuffer gapbuffer = new GapBuffer();
+        gapbuffer.delete();
+        assertEquals("", gapbuffer.toString());
+    }
+
+    @Test
+    public void leftAlreadyOnZero() {
+        GapBuffer gapbuffer = new GapBuffer();
+        gapbuffer.moveLeft();
+        gapbuffer.moveLeft();
+        gapbuffer.moveLeft();
+        gapbuffer.moveLeft();
+        gapbuffer.moveLeft();
+        gapbuffer.moveLeft();
+        assertEquals(0, gapbuffer.getCursorPosition());
+    }
+
+    @Test
+    public void rightAlreadyOnMax() {
+        GapBuffer gapbuffer = new GapBuffer();
+        gapbuffer.insert('h');
+        gapbuffer.moveRight();
+        gapbuffer.moveRight();
+        gapbuffer.moveRight();
+        gapbuffer.moveRight();
+        gapbuffer.moveRight();
+        assertEquals(1, gapbuffer.getCursorPosition());
+    }
 }
 
