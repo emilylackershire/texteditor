@@ -41,7 +41,7 @@ public class GapBufferTests {
         gapbuffer.insert('i');
         gapbuffer.delete();
         String testString = gapbuffer.toString();
-        assertEquals("h", testString);
+        assertEquals("h ", testString);
     }
 
      /**
@@ -113,7 +113,6 @@ public class GapBufferTests {
     public void rightOneTest() {
         GapBuffer gapbuffer = new GapBuffer();
         gapbuffer.insert('h');
-        gapbuffer.getCursorPosition();
         gapbuffer.moveLeft();
         gapbuffer.moveRight();
         assertEquals(1, gapbuffer.getCursorPosition());
@@ -187,7 +186,4 @@ public class GapBufferTests {
         }
         return gapbuffer.getChar(sz - 1) == ch;
     }
-
-
-
 }

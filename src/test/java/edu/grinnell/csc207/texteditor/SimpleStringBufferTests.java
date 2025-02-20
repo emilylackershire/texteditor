@@ -113,7 +113,6 @@ public class SimpleStringBufferTests {
     public void rightOneTest() {
         SimpleStringBuffer stringbuffer = new SimpleStringBuffer();
         stringbuffer.insert('h');
-        stringbuffer.getCursorPosition();
         stringbuffer.moveLeft();
         stringbuffer.moveRight();
         assertEquals(1, stringbuffer.getCursorPosition());
