@@ -21,7 +21,7 @@ public class SimpleStringBuffer {
      * deletes a character from the string buffer
      */
     public void delete() {
-        stringbuffer.delete(cursorPosition - 1 , cursorPosition);
+        stringbuffer.delete(cursorPosition - 1, cursorPosition);
         cursorPosition -= 1;
         size--;
     }
@@ -64,7 +64,7 @@ public class SimpleStringBuffer {
      * gets character at index i and returns it
      * @param i - index we want to check character at
      * @return character at index i
-     * @throws IndexOutOfBoundsException when i is an invalid index greater than the size of the buffer
+     * @throws IndexOutOfBoundsException when i is an invalid index
      */
     public char getChar(int i) {
         if (i <= size) {
@@ -79,6 +79,6 @@ public class SimpleStringBuffer {
      */
     @Override
     public String toString() {
-        return(stringbuffer.toString());
+        return (stringbuffer.toString());
     }
 }
