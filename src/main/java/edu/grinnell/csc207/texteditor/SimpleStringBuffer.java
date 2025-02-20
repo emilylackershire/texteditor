@@ -22,7 +22,7 @@ public class SimpleStringBuffer {
      */
     public void delete() {
         stringbuffer.delete(cursorPosition -1 , cursorPosition);
-        cursorPosition += 1;
+        cursorPosition -= 1;
         size--;
     }
 
@@ -38,14 +38,18 @@ public class SimpleStringBuffer {
      * moves the cursor position to the left
      */
     public void moveLeft() {
-        cursorPosition -= 1;
+        if(cursorPosition != 0){
+            cursorPosition -= 1;
+        }
     }
 
     /**
      * moves the cursor position to the right
      */
     public void moveRight() {
-        cursorPosition += 1;
+        if(cursorPosition != size){
+            cursorPosition += 1;
+        }
     }
 
     /**
