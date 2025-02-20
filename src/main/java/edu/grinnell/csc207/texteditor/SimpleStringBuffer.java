@@ -3,7 +3,7 @@ package edu.grinnell.csc207.texteditor;
  * A naive implementation of a text buffer using a <code>String</code>.
  */
 public class SimpleStringBuffer {
-    private StringBuffer stringbuffer = new StringBuffer("");
+    private final StringBuffer stringbuffer = new StringBuffer("");
     private int cursorPosition = 0;
     private int size = 0;
 

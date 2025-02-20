@@ -13,7 +13,8 @@ public class GapBuffer {
     private int size = 0;
 
     /**
-     * @param ch
+     * inserts character to string buffer
+     * @param ch - character we want to add
      */
     public void insert(char ch) {
         if(gapStart >= gapEnd) {
@@ -34,6 +35,9 @@ public class GapBuffer {
         gapStart++;
     }
 
+    /**
+     * deletes a character from the string buffer
+     */
     public void delete() {
         if(size != 0) {
             gapBuffer[cursor - 1] = '\0';
@@ -43,10 +47,17 @@ public class GapBuffer {
         }
     }
 
+    /**
+     * returns the cursor position
+     * @return cursorPosition
+     */
     public int getCursorPosition() {
         return cursor;
     }
 
+    /**
+     * moves the cursor position to the left
+     */
     public void moveLeft() {
         if(cursor != 0){
             cursor -= 1;
@@ -58,6 +69,9 @@ public class GapBuffer {
         }
     }
 
+    /**
+     * moves the cursor position to the right
+     */
     public void moveRight() {
         if(cursor != arrLength){
             char temp = gapBuffer[cursor];
@@ -69,30 +83,32 @@ public class GapBuffer {
         }
     }
 
+    /**
+     * returns size of string buffer
+     * @return size 
+     */
     public int getSize() {
         return size;
     }
 
+    /**
+     * gets character at index i and returns it
+     * @param i - index we want to check character at
+     * @return character at index i
+     * @throws IndexOutOfBoundsException when i is an invalid index greater than the size of the buffer
+     */
     public char getChar(int i) {
         return gapBuffer[i];
     }
 
+    /**
+     * returns the string buffer as a string
+     * @return string buffer 
+     */
     @Override
     public String toString() {
         String gapBufferString = new String(gapBuffer);
         gapBufferString = gapBufferString.replaceAll("\0", "");
         return gapBufferString;
-    }
-
-    public static void main(String[] args) {
-        System.out.println("hello world");
-        GapBuffer gapbuffer = new GapBuffer();
-        gapbuffer.insert('h');
-        System.out.println(gapbuffer.getCursorPosition());
-        gapbuffer.moveLeft();
-        gapbuffer.moveRight();
-        System.out.println(gapbuffer.getCursorPosition());
-        String testString = gapbuffer.toString();
-        System.out.println(testString);
     }
 }
