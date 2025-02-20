@@ -21,7 +21,7 @@ public class SimpleStringBuffer {
      * deletes a character from the string buffer
      */
     public void delete() {
-        stringbuffer.delete(cursorPosition -1 , cursorPosition);
+        stringbuffer.delete(cursorPosition - 1 , cursorPosition);
         cursorPosition -= 1;
         size--;
     }
@@ -38,7 +38,7 @@ public class SimpleStringBuffer {
      * moves the cursor position to the left
      */
     public void moveLeft() {
-        if(cursorPosition != 0){
+        if (cursorPosition != 0) {
             cursorPosition -= 1;
         }
     }
@@ -47,7 +47,7 @@ public class SimpleStringBuffer {
      * moves the cursor position to the right
      */
     public void moveRight() {
-        if(cursorPosition != size){
+        if (cursorPosition != size) {
             cursorPosition += 1;
         }
     }
@@ -67,7 +67,7 @@ public class SimpleStringBuffer {
      * @throws IndexOutOfBoundsException when i is an invalid index greater than the size of the buffer
      */
     public char getChar(int i) {
-        if(i <= size) {
+        if (i <= size) {
             return stringbuffer.charAt(i);
         }
         throw new IndexOutOfBoundsException("This index is out of bounds");

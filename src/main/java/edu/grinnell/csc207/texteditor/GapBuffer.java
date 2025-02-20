@@ -1,7 +1,7 @@
 package edu.grinnell.csc207.texteditor;
 
 /**
- * A gap buffer-based implementation of a text buffer.
+ * A gap buffer based implementation of a text buffer.
  */
 public class GapBuffer {
 
@@ -17,17 +17,17 @@ public class GapBuffer {
      * @param ch - character we want to add
      */
     public void insert(char ch) {
-        if(gapStart >= gapEnd) {
+        if (gapStart >= gapEnd) {
             arrLength *= 2;
             char[] newGapBuffer = new char[arrLength];
-            for(int i = 0; i < gapStart; i++) {
+            for (int i = 0; i < gapStart; i++) {
                 newGapBuffer[i] = gapBuffer[i];
             }
-            for(int j = gapEnd + (arrLength/2); j < arrLength; j++) {
-                newGapBuffer[j] = gapBuffer[j-(arrLength/2)];
+            for (int j = gapEnd + (arrLength / 2); j < arrLength; j++) {
+                newGapBuffer[j] = gapBuffer[j - (arrLength / 2)];
             }
             gapBuffer = newGapBuffer;
-            gapEnd = gapStart + (arrLength/2);
+            gapEnd = gapStart + (arrLength / 2);
         } 
         gapBuffer[cursor] = ch;
         cursor++;
@@ -39,7 +39,7 @@ public class GapBuffer {
      * deletes a character from the string buffer
      */
     public void delete() {
-        if(size != 0) {
+        if (size != 0) {
             gapBuffer[cursor - 1] = '\0';
             size--;
             gapStart--;
@@ -59,10 +59,10 @@ public class GapBuffer {
      * moves the cursor position to the left
      */
     public void moveLeft() {
-        if(cursor != 0){
+        if (cursor != 0) {
             cursor -= 1;
             char temp = gapBuffer[cursor];
-            for(int i = cursor + 1; i < arrLength - 1; i++) {
+            for (int i = cursor + 1; i < arrLength - 1; i++) {
                 gapBuffer[i] = temp;
                 temp = gapBuffer[i + 1];
             }
@@ -73,9 +73,9 @@ public class GapBuffer {
      * moves the cursor position to the right
      */
     public void moveRight() {
-        if(cursor != arrLength){
+        if (cursor != arrLength) {
             char temp = gapBuffer[cursor];
-            for(int i = cursor; i < arrLength - 1; i++) {
+            for (int i = cursor; i < arrLength - 1; i++) {
                 gapBuffer[i] = temp;
                 temp = gapBuffer[i - 1];
             }
