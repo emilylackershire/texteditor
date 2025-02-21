@@ -39,7 +39,7 @@ public class GapBuffer {
      * deletes a character from the string buffer
      */
     public void delete() {
-        if (size != 0) {
+        if (cursor > 0 && size != 0) {
             gapBuffer[cursor - 1] = '\0';
             size--;
             gapStart--;
