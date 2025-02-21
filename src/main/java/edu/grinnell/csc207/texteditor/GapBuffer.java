@@ -54,18 +54,27 @@ public class GapBuffer {
     public int getCursorPosition() {
         return cursor;
     }
+    /**
+     * returns the cursor position
+     * @return cursorPosition
+     */
+    public int getGapEnd() {
+        return gapEnd;
+    }
+
 
     /**
      * moves the cursor position to the left
      */
     public void moveLeft() {
         if (cursor != 0) {
-            cursor -= 1;
-            char temp = gapBuffer[cursor];
-            for (int i = cursor + 1; i < arrLength - 1; i++) {
-                gapBuffer[i] = temp;
-                temp = gapBuffer[i + 1];
+            if(size != arrLength) {
+                gapBuffer[gapEnd - 1] = gapBuffer[cursor - 1];
+                gapBuffer[cursor - 1] = '\0';
+                gapEnd--;
+                gapStart--;
             }
+            cursor -= 1;
         }
     }
 
@@ -74,10 +83,11 @@ public class GapBuffer {
      */
     public void moveRight() {
         if (cursor != arrLength) {
-            char temp = gapBuffer[cursor];
-            for (int i = cursor; i < arrLength - 1; i++) {
-                gapBuffer[i] = temp;
-                temp = gapBuffer[i - 1];
+            if(size != arrLength) {
+                gapBuffer[cursor] = gapBuffer[gapStart - 1];
+                gapBuffer[cursor] = '\0';
+                gapEnd++;
+                gapStart++;
             }
             cursor += 1;
         }
@@ -110,5 +120,18 @@ public class GapBuffer {
         String gapBufferString = new String(gapBuffer);
         gapBufferString = gapBufferString.replaceAll("\0", "");
         return gapBufferString;
+    }
+    public static void main(String[] args) {
+        GapBuffer gapbuffer = new GapBuffer();
+        gapbuffer.insert('h');
+        gapbuffer.insert('i');
+        gapbuffer.insert('!');
+        System.out.println(gapbuffer.toString());
+        gapbuffer.moveLeft();
+        System.out.println(gapbuffer.toString());
+        gapbuffer.moveLeft();
+        System.out.println(gapbuffer.toString());
+        gapbuffer.delete();
+        System.out.println(gapbuffer.toString());
     }
 }

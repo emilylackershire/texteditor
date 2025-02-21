@@ -266,9 +266,30 @@ public class GapBufferTests {
         gapbuffer.insert('!');
         gapbuffer.moveLeft();
         gapbuffer.moveLeft();
-        gapbuffer.moveLeft();
         gapbuffer.delete();
-        assertEquals("hhi!", gapbuffer.toString());
+        assertEquals("i!", gapbuffer.toString());
+    }
+
+    @Test
+    public void longMoveTest() {
+        GapBuffer gapbuffer = new GapBuffer();
+        gapbuffer.insert('h');
+        gapbuffer.insert('i');
+        gapbuffer.insert('!');
+        gapbuffer.insert('e');
+        gapbuffer.insert('m');
+        gapbuffer.insert('i');
+        gapbuffer.insert('l');
+        gapbuffer.insert('y');
+        gapbuffer.moveLeft();
+        gapbuffer.moveLeft();
+        gapbuffer.moveLeft();
+        gapbuffer.moveLeft();
+        gapbuffer.moveLeft();
+        gapbuffer.moveLeft();
+        gapbuffer.moveRight();
+        gapbuffer.delete();
+        assertEquals("hiemily", gapbuffer.toString());
     }
 
 }
