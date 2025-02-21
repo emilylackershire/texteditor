@@ -258,4 +258,17 @@ public class GapBufferTests {
         assertEquals(1, gapbuffer.getCursorPosition());
     }
 
+    @Test
+    public void deleteFrontTest() {
+        GapBuffer gapbuffer = new GapBuffer();
+        gapbuffer.insert('h');
+        gapbuffer.insert('i');
+        gapbuffer.insert('!');
+        gapbuffer.moveLeft();
+        gapbuffer.moveLeft();
+        gapbuffer.moveLeft();
+        gapbuffer.delete();
+        assertEquals("hhi!", gapbuffer.toString());
+    }
+
 }
