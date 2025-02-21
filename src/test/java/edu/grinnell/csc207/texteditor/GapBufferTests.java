@@ -88,7 +88,32 @@ public class GapBufferTests {
     public void leftOneTest() {
         GapBuffer gapbuffer = new GapBuffer();
         gapbuffer.insert('h');
-        gapbuffer.getCursorPosition();
+        gapbuffer.moveLeft();
+        assertEquals(0, gapbuffer.getCursorPosition());
+    }
+
+    @Test
+    public void leftThreeTest() {
+        GapBuffer gapbuffer = new GapBuffer();
+        gapbuffer.insert('h');
+        gapbuffer.insert('e');
+        gapbuffer.insert('l');
+        gapbuffer.insert('l');
+        gapbuffer.insert('o');
+        gapbuffer.moveLeft();
+        gapbuffer.moveLeft();
+        gapbuffer.moveLeft();
+        assertEquals(2, gapbuffer.getCursorPosition());
+    }
+
+    @Test
+    public void leftManyTest() {
+        GapBuffer gapbuffer = new GapBuffer();
+        gapbuffer.insert('h');
+        gapbuffer.moveLeft();
+        gapbuffer.moveLeft();
+        gapbuffer.moveLeft();
+        gapbuffer.moveLeft();
         gapbuffer.moveLeft();
         assertEquals(0, gapbuffer.getCursorPosition());
     }
@@ -117,6 +142,21 @@ public class GapBufferTests {
         gapbuffer.moveRight();
         assertEquals(1, gapbuffer.getCursorPosition());
     }
+
+    @Test
+    public void rightManyTest() {
+        GapBuffer gapbuffer = new GapBuffer();
+        gapbuffer.insert('h');
+        gapbuffer.insert('i');
+        gapbuffer.insert('!');
+        gapbuffer.moveLeft();
+        gapbuffer.moveRight();
+        gapbuffer.moveRight();
+        gapbuffer.moveRight();
+        gapbuffer.moveRight();
+        gapbuffer.moveRight();
+        assertEquals(4, gapbuffer.getCursorPosition());
+    }   
 
      /**
      * test two for moveRight

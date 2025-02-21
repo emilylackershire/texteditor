@@ -73,7 +73,7 @@ public class GapBuffer {
      * moves the cursor position to the right
      */
     public void moveRight() {
-        if (cursor != arrLength - 1) {
+        if (cursor != arrLength) {
             char temp = gapBuffer[cursor];
             for (int i = cursor; i < arrLength - 1; i++) {
                 gapBuffer[i] = temp;
