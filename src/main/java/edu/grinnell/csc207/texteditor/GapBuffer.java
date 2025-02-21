@@ -68,7 +68,7 @@ public class GapBuffer {
      */
     public void moveLeft() {
         if (cursor != 0) {
-            if(size != arrLength) {
+            if (size != arrLength) {
                 gapBuffer[gapEnd - 1] = gapBuffer[cursor - 1];
                 gapBuffer[cursor - 1] = '\0';
                 gapEnd--;
@@ -83,7 +83,7 @@ public class GapBuffer {
      */
     public void moveRight() {
         if (cursor != arrLength) {
-            if(size != arrLength) {
+            if (size != arrLength) {
                 gapBuffer[cursor] = gapBuffer[gapStart - 1];
                 gapBuffer[cursor] = '\0';
                 gapEnd++;
@@ -120,18 +120,5 @@ public class GapBuffer {
         String gapBufferString = new String(gapBuffer);
         gapBufferString = gapBufferString.replaceAll("\0", "");
         return gapBufferString;
-    }
-    public static void main(String[] args) {
-        GapBuffer gapbuffer = new GapBuffer();
-        gapbuffer.insert('h');
-        gapbuffer.insert('i');
-        gapbuffer.insert('!');
-        System.out.println(gapbuffer.toString());
-        gapbuffer.moveLeft();
-        System.out.println(gapbuffer.toString());
-        gapbuffer.moveLeft();
-        System.out.println(gapbuffer.toString());
-        gapbuffer.delete();
-        System.out.println(gapbuffer.toString());
     }
 }
