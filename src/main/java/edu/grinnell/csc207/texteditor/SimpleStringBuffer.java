@@ -21,7 +21,7 @@ public class SimpleStringBuffer {
      * deletes a character from the string buffer
      */
     public void delete() {
-        if (size > 0) {
+        if (cursorPosition > 0) {
             stringbuffer.delete(cursorPosition - 1, cursorPosition);
             cursorPosition -= 1;
             size--;

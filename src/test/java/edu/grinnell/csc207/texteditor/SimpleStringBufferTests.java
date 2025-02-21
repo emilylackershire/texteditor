@@ -189,33 +189,34 @@ public class SimpleStringBufferTests {
     
     @Test
     public void deleteZero() {
-        GapBuffer gapbuffer = new GapBuffer();
-        gapbuffer.delete();
-        assertEquals("", gapbuffer.toString());
+        SimpleStringBuffer stringbuffer = new SimpleStringBuffer();
+        stringbuffer.delete();
+        assertEquals("", stringbuffer.toString());
     }
 
     @Test
     public void leftAlreadyOnZero() {
-        GapBuffer gapbuffer = new GapBuffer();
-        gapbuffer.moveLeft();
-        gapbuffer.moveLeft();
-        gapbuffer.moveLeft();
-        gapbuffer.moveLeft();
-        gapbuffer.moveLeft();
-        gapbuffer.moveLeft();
-        assertEquals(0, gapbuffer.getCursorPosition());
+        SimpleStringBuffer stringbuffer = new SimpleStringBuffer();
+        stringbuffer.moveLeft();
+        stringbuffer.moveLeft();
+        stringbuffer.moveLeft();
+        stringbuffer.moveLeft();
+        stringbuffer.moveLeft();
+        stringbuffer.moveLeft();
+        assertEquals(0, stringbuffer.getCursorPosition());
     }
 
     @Test
     public void rightAlreadyOnMax() {
-        GapBuffer gapbuffer = new GapBuffer();
-        gapbuffer.insert('h');
-        gapbuffer.moveRight();
-        gapbuffer.moveRight();
-        gapbuffer.moveRight();
-        gapbuffer.moveRight();
-        gapbuffer.moveRight();
-        assertEquals(1, gapbuffer.getCursorPosition());
+        SimpleStringBuffer stringbuffer = new SimpleStringBuffer();
+        stringbuffer.insert('h');
+        stringbuffer.moveRight();
+        stringbuffer.moveRight();
+        stringbuffer.moveRight();
+        stringbuffer.moveRight();
+        stringbuffer.moveRight();
+        assertEquals(1, stringbuffer.getCursorPosition());
     }
+
 }
 
