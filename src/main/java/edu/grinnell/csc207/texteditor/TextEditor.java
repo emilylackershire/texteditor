@@ -56,7 +56,7 @@ public class TextEditor {
         if (Files.exists(filePath)) {
             if (Files.isRegularFile(filePath)) {
                 String fileString = Files.readString(filePath);
-                for(int i = 0; i < fileString.length(); i++) {
+                for (int i = 0; i < fileString.length(); i++) {
                     gapbuffer.insert(gapbuffer.getChar(i));
                 }
             }
