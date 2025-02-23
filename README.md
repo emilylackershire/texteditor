@@ -36,6 +36,12 @@ insert is O(1)
 
 ## Changelog
 
+commit 639bf83b98c97b6a908e051ad0fe0352badd1d37 (HEAD -> main)
+Author: Emily <lackersh@grinnell.edu>
+Date:   Sun Feb 23 17:21:50 2025 -0600
+
+    updated readme and added changelog
+
 commit 7a3820bfde827e4eae56ad4d945e0f0937fcffbe (HEAD -> main, origin/main, origin/HEAD)
 Author: Emily <lackersh@grinnell.edu>
 Date:   Sun Feb 23 17:00:26 2025 -0600
