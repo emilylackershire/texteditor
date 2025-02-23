@@ -55,7 +55,7 @@ public class TextEditor {
 
         if (Files.exists(filePath)) {
             if (Files.isRegularFile(filePath)) {
-            System.out.println("File Exists");     
+                System.out.println("File Exists");     
             }
         }
         drawBuffer(gapbuffer, screen);
