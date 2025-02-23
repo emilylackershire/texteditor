@@ -42,7 +42,7 @@ public class TextEditor {
      */
     public static void main(String[] args) throws IOException {
         if (args.length != 1) {
-            System.err.println("Usage: java TextEditor <filename>");
+            System.err.println("Usage: java TextEditor: missing a file");
             System.exit(1);
         }
     
@@ -55,7 +55,10 @@ public class TextEditor {
 
         if (Files.exists(filePath)) {
             if (Files.isRegularFile(filePath)) {
-                System.out.println("File Exists");     
+                String fileString = Files.readString(filePath);
+                for(int i = 0; i < fileString.length(); i++) {
+                    gapbuffer.insert(gapbuffer.getChar(i));
+                }
             }
         }
         drawBuffer(gapbuffer, screen);
@@ -79,5 +82,6 @@ public class TextEditor {
             drawBuffer(gapbuffer, screen);
         }
         screen.stopScreen();
+        Files.writeString(filePath, gapbuffer.toString());
     }
 }
