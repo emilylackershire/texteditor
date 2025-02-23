@@ -14,20 +14,27 @@ import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
  * The driver for the TextEditor Application.
  */
 public class TextEditor {
+
+    /**
+     * Takes in a gap buffer and adds the elements of that gapbuffer to the screen
+     * @param buf - gap buffer that we are using 
+     * @param screen - screen that we ar using 
+     * @throws IOException - throws io exception if the screen can't refresh
+     */
     public static void drawBuffer(GapBuffer buf, Screen screen) throws IOException {
-            int row = 0;
-            int screenWidth = 80;
-            int col = 0;
+        int row = 0;
+        int screenWidth = 80;
+        int col = 0;
     
-            for(int i = 0; i < buf.getSize(); i++) {
-                char ch = buf.getChar(i);
-                row = i / screenWidth;
-                col = i % screenWidth;
-                TextCharacter text = new TextCharacter(ch);
-                screen.setCharacter(row, col, text);
-            }
-            screen.refresh();
+        for (int i = 0; i < buf.getSize(); i++) {
+            char ch = buf.getChar(i);
+            row = i / screenWidth;
+            col = i % screenWidth;
+            TextCharacter text = new TextCharacter(ch);
+            screen.setCharacter(row, col, text);
         }
+        screen.refresh();
+    }
         
     /**
      * The main entry point for the TextEditor application.
@@ -47,8 +54,8 @@ public class TextEditor {
         GapBuffer gapbuffer = new GapBuffer();
 
         if (Files.exists(filePath)) {
-            if (Files.isRegularFile(filePath)){
-                    
+            if (Files.isRegularFile(filePath)) {
+            System.out.println("File Exists");     
             }
         }
         drawBuffer(gapbuffer, screen);
@@ -60,17 +67,13 @@ public class TextEditor {
             if (key == KeyType.Character) {
                 char ch = stroke.getCharacter();
                 gapbuffer.insert(ch);
-            }
-            else if (key == KeyType.ArrowLeft) {
+            } else if (key == KeyType.ArrowLeft) {
                 gapbuffer.moveLeft();
-            }
-            else if (key == KeyType.ArrowRight) {
+            } else if (key == KeyType.ArrowRight) {
                 gapbuffer.moveRight();
-            }
-            else if (key == KeyType.Backspace) {
+            } else if (key == KeyType.Backspace) {
                 gapbuffer.delete();
-            }
-            else if (key == KeyType.Escape) {
+            } else if (key == KeyType.Escape) {
                 isRunning = false;
             }
             drawBuffer(gapbuffer, screen);
