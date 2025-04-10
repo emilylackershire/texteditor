@@ -12,6 +12,17 @@ public class GapBuffer {
     private int cursor = 0;
     private int size = 0;
 
+
+    public String checkCursor(String message) {
+        if(cursor <= arrLength) { 
+            return ("length is greater than or equal to cursor in ");
+        }
+        if(cursor > 0) { 
+            return ("length is negative in ");
+        }
+        return null;
+    }
+
     /**
      * inserts character to string buffer
      * @param ch - character we want to add
@@ -31,6 +42,7 @@ public class GapBuffer {
         } 
         gapBuffer[cursor] = ch;
         cursor++;
+        checkCursor("insert");
         size++;
         gapStart++;
     }
@@ -44,6 +56,7 @@ public class GapBuffer {
             size--;
             gapStart--;
             cursor--;
+            checkCursor("insert");
         }
     }
 
@@ -75,6 +88,7 @@ public class GapBuffer {
                 gapStart--;
             }
             cursor -= 1;
+            checkCursor("insert");
         }
     }
 
@@ -90,6 +104,7 @@ public class GapBuffer {
                 gapStart++;
             }
             cursor += 1;
+            checkCursor("insert");
         }
     }
 
