@@ -9,7 +9,9 @@ import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
+import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
+import com.googlecode.lanterna.terminal.swing.SwingTerminalFrame;
 /**
  * The driver for the TextEditor Application.
  */
@@ -46,7 +48,15 @@ public class TextEditor {
             System.exit(1);
         }
     
-        Screen screen = new DefaultTerminalFactory().createScreen();
+        //Screen screen = new DefaultTerminalFactory().createScreen();
+        SwingTerminalFrame frame = new DefaultTerminalFactory().createSwingTerminal();
+        
+        frame.setTitle("Text Editor");
+        frame.setVisible(true);
+        System.out.println(frame.getSize());
+        //frame.add(new Button());
+        Screen screen = new TerminalScreen(frame);
+        //screen.setCharacter(0, 0, new TextCharacter(' '));
         screen.startScreen();
             
         String fileName = args[0];
