@@ -48,17 +48,12 @@ public class TextEditor {
             System.exit(1);
         }
     
-        //Screen screen = new DefaultTerminalFactory().createScreen();
         SwingTerminalFrame frame = new DefaultTerminalFactory().createSwingTerminal();
         
         frame.setTitle("Text Editor");
         frame.setVisible(true);
-        System.out.println(frame.getSize());
-        //frame.add(new Button());
         Screen screen = new TerminalScreen(frame);
-        //screen.setCharacter(0, 0, new TextCharacter(' '));
         screen.startScreen();
-            
         String fileName = args[0];
         Path filePath = Paths.get(fileName);
         GapBuffer gapbuffer = new GapBuffer();
