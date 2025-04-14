@@ -19,6 +19,7 @@
    https://code.google.com/archive/p/lanterna/wikis/UsingScreen.wiki
 + I did the changelog manually for the last one and I did not want to do this again so I read this article about how to do it. 
    https://www.freecodecamp.org/news/a-beginners-guide-to-git-what-is-a-changelog-and-how-to-generate-it/
++ Professor Osera helped me with getting lanterna to run on windows.
 
 ## Analysis of SimpleStringBuffer
 

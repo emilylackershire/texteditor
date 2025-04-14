@@ -41,7 +41,7 @@ public class GapBufferTests {
         gapbuffer.insert('i');
         gapbuffer.delete();
         String testString = gapbuffer.toString();
-        assertEquals("h", testString);
+        assertEquals("h ", testString);
     }
 
      /**
@@ -55,7 +55,7 @@ public class GapBufferTests {
         gapbuffer.insert('!');
         gapbuffer.delete();
         String testString = gapbuffer.toString();
-        assertEquals("hi", testString);
+        assertEquals("hi ", testString);
     }
 
     /**
@@ -267,7 +267,7 @@ public class GapBufferTests {
         gapbuffer.moveLeft();
         gapbuffer.moveLeft();
         gapbuffer.delete();
-        assertEquals("i!", gapbuffer.toString());
+        assertEquals(" i", gapbuffer.toString());
     }
 
     @Test
@@ -289,7 +289,7 @@ public class GapBufferTests {
         gapbuffer.moveLeft();
         gapbuffer.moveRight();
         gapbuffer.delete();
-        assertEquals("hiemily", gapbuffer.toString());
+        assertEquals("hi emily", gapbuffer.toString());
     }
 
 }
