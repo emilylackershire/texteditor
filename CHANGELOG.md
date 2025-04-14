@@ -18,4 +18,4 @@ I then tried to fix the thing with each letter being on a new line instead of ne
 
 I then noticed playing around with things that there would be an error saying it couldn't create a text character from a control character, which was happening in draw buffer. I fixed this by not trying to draw a buffer every time, but only when it was actually updates. The movement still works, but since it doesn't have to draw anything it doesn't have to every time. This is happening in the switch statement in TextEditor. 
 
-I then realized that my delete was lowkey just moving left and not acctually deleting, so things were replaced when you wrote over them but not as you "deleted" them.
+I then realized that my delete was lowkey just moving left and not acctually deleting, so things were replaced when you wrote over them but not as you "deleted" them. I fixed this, but then there was something really weird going on with size when you decremented it, so it wouldn't show up when you did that. This was super weird as I size isn't even used in delete. 
