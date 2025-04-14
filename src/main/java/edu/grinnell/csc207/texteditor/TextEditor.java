@@ -33,7 +33,7 @@ public class TextEditor {
             row = i / screenWidth;
             col = i % screenWidth;
             TextCharacter text = new TextCharacter(ch);
-            screen.setCharacter(row, col, text);
+            screen.setCharacter(col, row, text);
         }
         screen.refresh();
     }
@@ -72,17 +72,30 @@ public class TextEditor {
         while (isRunning) {
             KeyStroke stroke = screen.readInput();
             KeyType key = stroke.getKeyType();
-            if (key == KeyType.Character) {
-                char ch = stroke.getCharacter();
-                gapbuffer.insert(ch);
-            } else if (key == KeyType.ArrowLeft) {
-                gapbuffer.moveLeft();
-            } else if (key == KeyType.ArrowRight) {
-                gapbuffer.moveRight();
-            } else if (key == KeyType.Backspace) {
-                gapbuffer.delete();
-            } else if (key == KeyType.Escape) {
-                isRunning = false;
+            if (null != key) switch (key) {
+                case Character -> {
+                    char ch = stroke.getCharacter();
+                    gapbuffer.insert(ch);
+                    break;
+                }
+                case ArrowLeft -> { 
+                    gapbuffer.moveLeft();
+                    break;
+                }
+                case ArrowRight -> { 
+                    gapbuffer.moveRight();
+                    break;
+                }
+                case Backspace -> { 
+                    gapbuffer.delete();
+                    break;
+                }
+                case Escape -> { 
+                    isRunning = false;
+                    break;
+                }
+                default -> {
+                }
             }
             drawBuffer(gapbuffer, screen);
         }

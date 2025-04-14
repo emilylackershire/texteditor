@@ -84,8 +84,9 @@ public class GapBuffer {
     public void moveLeft() {
         if (cursor != 0) {
             if (size != arrLength) {
+                System.out.println("gapStart: " + gapStart + " gapEnd: " + gapEnd + " cursor: " + cursor);
                 gapBuffer[gapEnd - 1] = gapBuffer[cursor - 1];
-                gapBuffer[cursor - 1] = '\0';
+                gapBuffer[cursor] = '\0';
                 gapEnd--;
                 gapStart--;
             }
