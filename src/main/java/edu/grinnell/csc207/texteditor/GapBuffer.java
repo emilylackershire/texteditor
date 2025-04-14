@@ -52,13 +52,11 @@ public class GapBuffer {
      * deletes a character from the string buffer
      */
     public void delete() {
-        if (cursor > 0 && size != 0) {
-            gapBuffer[cursor - 1] = '\0';
-            size--;
-            gapStart--;
-            checkCursor("insert");
-            cursor--;
-            checkCursor("insert");
+        System.out.println("cursor " + cursor + " size " + size);
+        if(cursor > 0) {
+            cursor -= 1;
+            gapBuffer[cursor] = ' ';
+            //size -= 1; For some reason, this makes it not acctually insert the space so you cannot see the delete
         }
     }
 
@@ -77,14 +75,12 @@ public class GapBuffer {
         return gapEnd;
     }
 
-
     /**
      * moves the cursor position to the left
      */
     public void moveLeft() {
         if (cursor != 0) {
             if (size != arrLength) {
-                System.out.println("gapStart: " + gapStart + " gapEnd: " + gapEnd + " cursor: " + cursor);
                 gapBuffer[gapEnd - 1] = gapBuffer[cursor - 1];
                 gapBuffer[cursor] = '\0';
                 gapEnd--;

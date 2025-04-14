@@ -76,6 +76,7 @@ public class TextEditor {
                 case Character -> {
                     char ch = stroke.getCharacter();
                     gapbuffer.insert(ch);
+                    drawBuffer(gapbuffer, screen);
                     break;
                 }
                 case ArrowLeft -> { 
@@ -88,6 +89,7 @@ public class TextEditor {
                 }
                 case Backspace -> { 
                     gapbuffer.delete();
+                    drawBuffer(gapbuffer, screen);
                     break;
                 }
                 case Escape -> { 
@@ -97,7 +99,6 @@ public class TextEditor {
                 default -> {
                 }
             }
-            drawBuffer(gapbuffer, screen);
         }
         screen.stopScreen();
         Files.writeString(filePath, gapbuffer.toString());

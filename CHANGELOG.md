@@ -10,6 +10,12 @@ For an E:
 
 ## Changes Made
 
-I had a laterna error because of working on a windows machine that was not letting the window pop up. I talked to Professor Osera about this, and he was able to fix it for me in TextEditor on lines 51-59. 
+I had a lanterna error because of working on a windows machine that was not letting the window pop up. I talked to Professor Osera about this, and he was able to fix it for me in TextEditor on lines 51-59. 
 
 I first implemented a method checkCursor to find out where the out of bounds error was happening, and it was because I was subtracting 1 in move right when I should't have been.
+
+I then tried to fix the thing with each letter being on a new line instead of next to each other, and this was very simple it was just switching where rows and columns were in line 36 of the text editor! I had it as screen.setCharacter(row, col, text); and changed it to screen.setCharacter(col, row, text);. 
+
+I then noticed playing around with things that there would be an error saying it couldn't create a text character from a control character, which was happening in draw buffer. I fixed this by not trying to draw a buffer every time, but only when it was actually updates. The movement still works, but since it doesn't have to draw anything it doesn't have to every time. This is happening in the switch statement in TextEditor. 
+
+I then realized that my delete was lowkey just moving left and not acctually deleting, so things were replaced when you wrote over them but not as you "deleted" them.
