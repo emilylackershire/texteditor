@@ -82,8 +82,8 @@ public class GapBuffer {
      * moves the cursor position to the right
      */
     public void moveRight() {
-        if (cursor != arrLength) {
-            if (size != arrLength) {
+        if (cursor < arrLength) {
+            if (size < arrLength && cursor != size) {
                 gapBuffer[cursor] = gapBuffer[gapStart];
                 gapBuffer[cursor] = '\0';
                 gapEnd++;

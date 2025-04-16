@@ -16,9 +16,7 @@ I had a lanterna error because of working on a windows machine that was not lett
 
 I first implemented a method checkCursor to find out where the out of bounds error was happening, and it was because I was subtracting 1 in move right when I should't have been in move right, for gapStart.
 
-I then noticed that it was still failing one of Professor Osera's tests, as the cursor position was returning 3 when it was 4 after the very last move right.
-
-
+I then noticed that it was still failing one of Professor Osera's tests, as the cursor position was returning 3 when it was 4 after the very last move right. To stop the cursor from keeping moving I also put in my if statement that the cursor should not move if it is equal to size. This just means that if its already at the end it won't move right more. 
 
 I then tried to fix the thing with each letter being on a new line instead of next to each other, and this was very simple it was just switching where rows and columns were in line 36 of the text editor! I had it as screen.setCharacter(row, col, text); and changed it to screen.setCharacter(col, row, text); and that made everything work right. 
 
