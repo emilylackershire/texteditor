@@ -72,31 +72,33 @@ public class TextEditor {
         while (isRunning) {
             KeyStroke stroke = screen.readInput();
             KeyType key = stroke.getKeyType();
-            if (null != key) switch (key) {
-                case Character -> {
-                    char ch = stroke.getCharacter();
-                    gapbuffer.insert(ch);
-                    drawBuffer(gapbuffer, screen);
-                    break;
-                }
-                case ArrowLeft -> { 
-                    gapbuffer.moveLeft();
-                    break;
-                }
-                case ArrowRight -> { 
-                    gapbuffer.moveRight();
-                    break;
-                }
-                case Backspace -> { 
-                    gapbuffer.delete();
-                    drawBuffer(gapbuffer, screen);
-                    break;
-                }
-                case Escape -> { 
-                    isRunning = false;
-                    break;
-                }
-                default -> {
+            if (null != key) { 
+                switch (key) {
+                    case Character -> {
+                        char ch = stroke.getCharacter();
+                       gapbuffer.insert(ch);
+                        drawBuffer(gapbuffer, screen);
+                        break;
+                    }
+                    case ArrowLeft -> { 
+                        gapbuffer.moveLeft();
+                        break;
+                    }
+                    case ArrowRight -> { 
+                        gapbuffer.moveRight();
+                        break;
+                    }
+                    case Backspace -> { 
+                        gapbuffer.delete();
+                        drawBuffer(gapbuffer, screen);
+                        break;
+                    }
+                    case Escape -> { 
+                        isRunning = false;
+                        break;
+                    }
+                    default -> {
+                    }
                 }
             }
         }
