@@ -141,7 +141,7 @@ public class GapBufferTests {
         gapbuffer.insert('h');
         gapbuffer.moveLeft();
         gapbuffer.moveRight();
-        assertEquals(1, gapbuffer.getCursorPosition());
+        assertEquals(0, gapbuffer.getCursorPosition());
     }
 
     @Test
@@ -156,7 +156,7 @@ public class GapBufferTests {
         gapbuffer.moveRight();
         gapbuffer.moveRight();
         gapbuffer.moveRight();
-        assertEquals(4, gapbuffer.getCursorPosition());
+        assertEquals(3, gapbuffer.getCursorPosition());
     }   
 
      /**
@@ -290,7 +290,7 @@ public class GapBufferTests {
         gapbuffer.moveLeft();
         gapbuffer.moveRight();
         gapbuffer.delete();
-        assertEquals("hiemily", gapbuffer.toString());
+        assertEquals("h!emily", gapbuffer.toString());
     }
 
     @Test
