@@ -76,7 +76,7 @@ public class TextEditor {
                 switch (key) {
                     case Character -> {
                         char ch = stroke.getCharacter();
-                       gapbuffer.insert(ch);
+                        gapbuffer.insert(ch);
                         drawBuffer(gapbuffer, screen);
                         break;
                     }
