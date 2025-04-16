@@ -24,16 +24,19 @@
 ## Analysis of SimpleStringBuffer
 
 Relevant inputs: 
-- character given to add to the string buffer
+- Char ch, a character given to add to the string buffer.
 
 Critical operations: 
-- inserting the character 
+- String + ch, inserting the character into the string buffer
 
 Mathematical model for insert runtime:
 Y = n
 
 Big-O:
-insert is O(1)
+insert is O(n)
+
+Justification: 
+To simulate a text editor with strings, we are essentially just spliting the string up into a substrings on either side of where the cursor should be. It does not have any for loops or repitition, so it will have a consistent time that it will run for, which is n.
 
 ## Changelog
 

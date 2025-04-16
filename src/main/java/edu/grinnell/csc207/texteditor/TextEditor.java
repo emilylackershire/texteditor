@@ -47,7 +47,7 @@ public class TextEditor {
             System.err.println("Usage: java TextEditor: missing a file");
             System.exit(1);
         }
-    
+
         SwingTerminalFrame frame = new DefaultTerminalFactory().createSwingTerminal();
         
         frame.setTitle("Text Editor");
@@ -59,11 +59,11 @@ public class TextEditor {
         GapBuffer gapbuffer = new GapBuffer();
 
         if (Files.exists(filePath)) {
-            if (Files.isRegularFile(filePath)) {
+            if (Files.exists(filePath) && Files.isRegularFile(filePath)) {
                 String fileString = Files.readString(filePath);
-                for (int i = 0; i < fileString.length(); i++) {
-                    gapbuffer.insert(gapbuffer.getChar(i));
-                }
+                //for (int i = 0; i < fileString.length(); i++) {
+                    //gapbuffer.insert(gapbuffer.getChar(i));
+                //}
             }
         }
         drawBuffer(gapbuffer, screen);
