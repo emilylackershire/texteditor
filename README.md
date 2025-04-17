@@ -20,6 +20,7 @@
 + I did the changelog manually for the last one and I did not want to do this again so I read this article about how to do it. 
    https://www.freecodecamp.org/news/a-beginners-guide-to-git-what-is-a-changelog-and-how-to-generate-it/
 + Professor Osera helped me with getting lanterna to run on windows.
++ had general discussions about the assignment with Finn Rowles and Owen Block
 
 ## Analysis of SimpleStringBuffer
 
@@ -36,7 +37,25 @@ Big-O:
 insert is O(n)
 
 Justification: 
-To simulate a text editor with strings, we are essentially just spliting the string up into a substrings on either side of where the cursor should be. It does not have any for loops or repitition, so it will have a consistent time that it will run for, which is n.
+To simulate a text editor with strings, we are essentially just spliting the string up into a substrings on either side of where the cursor should be. It will have a consistent time that it will run for, which is n. It cannot get faster most of the time in the way gap buffer can. 
+
+## Analysis of Gap Buffer
+
+relevant inputs:
+ - char ch that is being added to the gap buffer
+
+critical operations: 
+ - when a new input is added to the gap buffer and the buffer is expanded: newGapBuffer[i] = gapBuffer[i]; This will take the most possible time in the gap bufffer, when we don't have to expand it, then it will be quicker. 
+
+Mathematical model: 
+Y = x
+
+Big-O:
+O(n)
+
+Justification: 
+This is coming from the fact that sometimes we will have to expand the buffer and essentially re-insert things. This will require us to go through the whole buffer, hence O(n). Most of the time we will not have to expand the buffer, and therefore it will be faster, but I am considering the worst possible case here to be safe. 
+
 
 ## Changelog
 

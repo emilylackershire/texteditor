@@ -454,7 +454,3 @@ public class GapBufferTests {
         assertEquals(16085, buf.getCursorPosition(), "cursor");
     }
 }
-
-
-
-

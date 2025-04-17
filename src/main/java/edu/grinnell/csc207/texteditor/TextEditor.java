@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
@@ -34,6 +35,7 @@ public class TextEditor {
             col = i % screenWidth;
             TextCharacter text = new TextCharacter(ch);
             screen.setCharacter(col, row, text);
+            screen.setCursorPosition(new TerminalPosition(col, row));
         }
         screen.refresh();
     }
@@ -61,9 +63,10 @@ public class TextEditor {
         if (Files.exists(filePath)) {
             if (Files.exists(filePath) && Files.isRegularFile(filePath)) {
                 String fileString = Files.readString(filePath);
-                //for (int i = 0; i < fileString.length(); i++) {
-                    //gapbuffer.insert(gapbuffer.getChar(i));
-                //}
+                char[] fileChars = fileString.toCharArray();
+                for (int i = 0; i < fileString.length() - 1; i++) {
+                    gapbuffer.insert(fileChars[i]);
+                }
             }
         }
         drawBuffer(gapbuffer, screen);
