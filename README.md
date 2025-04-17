@@ -59,6 +59,84 @@ This is coming from the fact that sometimes we will have to expand the buffer an
 
 ## Changelog
 
+commit e2ca2754256b2a8b97c0532c75f975e1ecf53c9a (HEAD -> main, origin/main, origin/HEAD)
+Author: Emily <lackersh@grinnell.edu>
+Date:   Wed Apr 16 19:50:09 2025 -0500
+
+    fixed the cursor and the file so it saves! Also updated changelog and wrote the analysis of gab buffer in the readme   
+
+commit 50dbf101447ff1041593ab849edfe2e43f5d8b17
+Author: Emily <lackersh@grinnell.edu>
+Date:   Wed Apr 16 16:03:59 2025 -0500
+
+    fixed tests
+
+commit 40f6a69b23ac4e04dbdda212dfeae24b564c8ee6
+Author: Emily <lackersh@grinnell.edu>
+Date:   Wed Apr 16 16:00:14 2025 -0500
+
+    fixed error in insert
+
+commit d3cb0ef3af6d13839404f556750996c4660dd252
+Author: Emily <lackersh@grinnell.edu>
+Date:   Wed Apr 16 15:29:19 2025 -0500
+
+    one single indentation
+
+commit b3813972a4b0cf3af4475d8bac570cdd101529a7
+Author: Emily <lackersh@grinnell.edu>
+Date:   Wed Apr 16 15:26:02 2025 -0500
+
+    style
+
+commit a335188e687a8422360448e10b46dea741437f0f
+Author: Emily <lackersh@grinnell.edu>
+Date:   Wed Apr 16 15:19:02 2025 -0500
+
+    updated a bunch of things, including the gap buffer, added more tests for it, updating the changelog and updating the readme
+
+commit ad032da336b6b459dcf036c39df127963691af21
+Author: Emily <lackersh@grinnell.edu>
+Date:   Mon Apr 14 17:20:18 2025 -0500
+
+    fixed my tests so they were acctually right and updated readme
+
+commit 7d33529774fbf6543997132ad1147dccd3d9d91a
+Author: Emily <lackersh@grinnell.edu>
+Date:   Mon Apr 14 17:04:35 2025 -0500
+
+    updated changelog
+
+commit 71fb54d19d78dfe05e56ce3e8315da20e177aa6d
+Author: Emily <lackersh@grinnell.edu>
+Date:   Mon Apr 14 17:02:53 2025 -0500
+
+    tried to fix delete
+
+commit 619a3c400e96aec257cf7a9f2255bef8fe6c44b7
+Author: Emily <lackersh@grinnell.edu>
+Date:   Mon Apr 14 14:54:25 2025 -0500
+
+    got the words  to print right
+
+commit 8a8cc0e2849667eabe36420b28fc680d440f0ae5
+Author: Emily <lackersh@grinnell.edu>
+Date:   Fri Apr 11 16:32:50 2025 -0500
+
+    implemented check cursor to find whereit was going out of bounds
+
+commit 36e0cca256277c9d82a42dbebd2227c82f266a9e
+Author: Emily <lackersh@grinnell.edu>
+Date:   Fri Apr 11 16:18:44 2025 -0500
+
+    got help from professor Osera to make the lanterna terminal work!
+
+commit 37d5ba7629611f7b0358aba5d4a2c5075f21cfc7
+Author: Emily <lackersh@grinnell.edu>
+Date:   Thu Apr 10 15:39:45 2025 -0500
+
+    created changelog and started to work on things
+
 commit 639bf83b98c97b6a908e051ad0fe0352badd1d37 (HEAD -> main)
 Author: Emily <lackersh@grinnell.edu>
 Date:   Sun Feb 23 17:21:50 2025 -0600
